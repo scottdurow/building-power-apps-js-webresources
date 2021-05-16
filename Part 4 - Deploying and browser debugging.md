@@ -106,7 +106,7 @@ After installation, you must enable HTTPS decryption so that we can intercept th
 
   - `dev1_/js/clienthooks.js` - Enter the unique name of your webresource. 
   - Enter the full path of your `dist/ClientHooks.js`
-    ![](media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png)
+    <img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
 
   **Note:** This can also be a regex if you had multiple webresources at the same location:
 
@@ -116,7 +116,7 @@ After installation, you must enable HTTPS decryption so that we can intercept th
   ```
 
   Be sure to select **Enable rules** and **Unmatched requests passthrough**.
-  ![](media/Part 4 - Deploying and browser debugging/1be8153c41337664be9fcf5f9fe88f53-1621041352659.png)
+  <img src="media/Part 4 - Deploying and browser debugging/1be8153c41337664be9fcf5f9fe88f53-1621041352659.png" style="zoom:50%;" />
 
   Now when you refresh your browser, the webpack generated file will be loaded into the browser.
 
