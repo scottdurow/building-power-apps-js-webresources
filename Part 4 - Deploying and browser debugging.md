@@ -28,7 +28,8 @@ In the newly created project:
 
 3.  Select **spkl** and then **Install**
 
-4.  You will now see a **spkl** folder and **`spkl.json`** in your project. You can delete the other two c\# files since they are not needed:![](media/Part 4 - Deploying and browser debugging/d156b381057756735ead6da6c506b00d-1621041291312.png)
+4.  You will now see a **spkl** folder and **`spkl.json`** in your project. You can delete the other two c\# files since they are not needed:
+    <img src="media/Part 4 - Deploying and browser debugging/d156b381057756735ead6da6c506b00d-1621041291312.png" style="zoom:50%;" />
 
 
 #### Edit the `spkl.json`
