@@ -107,7 +107,9 @@ After installation, you must enable HTTPS decryption so that we can intercept th
 
   - `dev1_/js/clienthooks.js` - Enter the unique name of your webresource. 
   - Enter the full path of your `dist/ClientHooks.js`
-<img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
+
+
+    <img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
 
   **Note:** This can also be a regex if you had multiple webresources at the same location:
 
@@ -124,6 +126,8 @@ After installation, you must enable HTTPS decryption so that we can intercept th
 5.  Navigate your Dataverse App in the browser and press F12 (or `Ctrl + Shift + I`) to open the Developer Tools.
 
 6.  In The Developer Tools open the settings and check **Disable cache (while DevTools is open)**. This will ensure that the latest version is always requested when you refresh a page.
+    
+    
     <img src="media/Part 4 - Deploying and browser debugging/faa5aeb1be596978bf2ddfc62bfb7715-1621041310845.png" style="zoom:50%;" />
     
 7.  Ensure you have webpack running in watch mode (`npm start`)
