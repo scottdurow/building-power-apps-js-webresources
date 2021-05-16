@@ -107,7 +107,7 @@ After installation, you must enable HTTPS decryption so that we can intercept th
 
   - `dev1_/js/clienthooks.js` - Enter the unique name of your webresource. 
   - Enter the full path of your `dist/ClientHooks.js`
-    <img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
+<img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
 
   **Note:** This can also be a regex if you had multiple webresources at the same location:
 
