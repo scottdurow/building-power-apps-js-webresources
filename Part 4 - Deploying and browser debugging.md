@@ -98,7 +98,8 @@ After installation, you must enable HTTPS decryption so that we can intercept th
 
 1.  Open **Tools** -\> **Options** -\> **HTTPS** Tab
 
-2.  Check the **Decrypt HTTPS traffic** and accept the prompts to install the Fiddler Certificate.<img src="media/Part 4 - Deploying and browser debugging/2d9691975a3925b38d5183bcf4bdc143-1621041304252.png" style="zoom:50%;" />
+2.  Check the **Decrypt HTTPS traffic** and accept the prompts to install the Fiddler Certificate.
+<img src="media/Part 4 - Deploying and browser debugging/2d9691975a3925b38d5183bcf4bdc143-1621041304252.png" style="zoom:50%;" />
 
 3.  You can now select the **AutoResponder** tab, and select **Add Rule**
 
@@ -116,7 +117,7 @@ After installation, you must enable HTTPS decryption so that we can intercept th
   ```
 
   Be sure to select **Enable rules** and **Unmatched requests passthrough**.
-  <img src="media/Part 4 - Deploying and browser debugging/1be8153c41337664be9fcf5f9fe88f53-1621041352659.png" style="zoom:50%;" />
+<img src="media/Part 4 - Deploying and browser debugging/1be8153c41337664be9fcf5f9fe88f53-1621041352659.png" style="zoom:50%;" />
 
   Now when you refresh your browser, the webpack generated file will be loaded into the browser.
 
