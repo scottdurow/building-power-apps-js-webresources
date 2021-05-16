@@ -1,0 +1,5 @@
+nodewebapi:
+ logging: verbose
+ server:
+  host: https://dev1demos14.crm3.dynamics.com
+  version: 9.1

@@ -1,0 +1,15 @@
+{
+  "entities": [
+    "account",
+    "activityparty",
+    "email",
+    "opportunity"
+  ],
+  "actions": [
+    "WinOpportunity"
+  ],
+  "functions": [],
+  "output": {
+    "outputRoot": "./src/dataverse-gen"
+  }
+}

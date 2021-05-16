@@ -1,0 +1,33 @@
+{
+    "webresources": [
+        {
+
+            "profile": "default,debug",
+            "solution": "supersolution",
+            "files": [
+                {
+                    "uniquename": "dev1_/js/clienthooks.js",
+                    "file": "../clientjs/dist/clienthooks.js",
+                    "description": "JavaScript for Forms and Commandbar Actions"
+                }
+            ]
+        }
+    ],
+    "solutions": [
+        {
+            "profile": "default,debug",
+            "solution_uniquename": "supersolution",
+            "packagepath": "package",
+            "solutionpath": "solution_{0}_{1}_{2}_{3}.zip",
+            "packagetype": "unmanaged",
+            "increment_on_import": false,
+            "map": [
+                {
+                    "map": "file",
+                    "from": "Webresources/dev1_/js/clienthooks.js",
+                    "to": "../../clientjs/dist/clienthooks.js"
+                }
+            ]
+        }
+    ]
+}
