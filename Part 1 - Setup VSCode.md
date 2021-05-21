@@ -10,6 +10,7 @@ Before you start, you will need to install the following:
 
 -   **NodeJS** - <https://bit.ly/getnodejs>
 -   **VSCode** - <https://bit.ly/downloadvscode>
+-   **Visual Studio** - <https://visualstudio.microsoft.com/downloads/> (Community Edition is free!)
 
 When installing Node, select the LTS version and accept the defaults.
 <img src="media/Part 1 - Setup VSCode/c85dffc07d60c8a9603622b7e19f0dea.png" style="zoom:67%;" />
