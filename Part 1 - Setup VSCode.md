@@ -1,6 +1,6 @@
 # Part 1 - Setting up VSCode for Developing JavaScript Web Resources using TypeScript
 
-This post is part of the series 'Scott's guide to building Power AppJavaScript Web Resources using TypeScript'.
+This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 In this first part, we will cover setting up your VSCode environment to create TypeScript [Dataverse JavaScript Web resources.](https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/web-resources)
 
