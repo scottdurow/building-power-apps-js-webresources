@@ -33,7 +33,7 @@ Download and copy the following Webpack configuration files to your project fold
 
 [webpack.common.js](https://raw.githubusercontent.com/scottdurow/dataverse-jswebresource-template/master/webpack.common.js)
 
-[webpack.dev.js](../webpack.dev.js)
+[webpack.dev.js](https://raw.githubusercontent.com/scottdurow/dataverse-jswebresource-template/master/webpack.dev.js)
 
 [webpack.prod.js](https://raw.githubusercontent.com/scottdurow/dataverse-jswebresource-template/master/webpack.prod.js)
 

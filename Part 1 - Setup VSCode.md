@@ -42,7 +42,7 @@ you can simply create a new folder with the name of your project. I will use
 At the command line, type:
 
 ```shell
-mkdri clientjs
+mkdir clientjs
 cd clientjs
 ```
 
@@ -65,7 +65,7 @@ At the command line, type:
 
 ```shell
 npm install typescript --save-dev
-tsc -init
+npx tsc -init
 Code .
 ```
 
@@ -107,11 +107,11 @@ Open the tsconfig.json file and make the following changes:
 >   re-installed at anytime by deleting the node_modules folder and running the
 >   command: `npm install`
 
-### Install `ESLint` & `Prettifier`
+### Install `ESLint` & `prettier`
 
 You should always use a linter with your TypeScript projects to catch common
 issues and promote best practices. ESLint is the most common linter used with
-TypeScript today. Prettifier then ensures your code is always formatted
+TypeScript today. prettier then ensures your code is always formatted
 consistently so that you do not get noisy diffs when committing to source
 control.
 
@@ -141,20 +141,17 @@ provides feedback of any linting/prettifier issues.
 1. Install the ESLint Marketplace extension to VSCode. The ESLint extensions
    simply uses the ESLint configuration of your project.
    <img src="media/Part 1 - Setup VSCode/6436517ce7e84bbd405c017843009e9a.png" style="zoom:50%;" />
-
-2. Close and Re-open VSCode ensure that ESLint is running. You should now see
+2. Add a new file under a folder named `src`, named `index.ts` - this will mean that ESLint will start running on our project.
+3. Close and Re-open VSCode ensure that ESLint is running. You should now see
    ESLint in the status bar of VSCode:  
-   ![](media/Part 1 - Setup VSCode/69b04ab5ead6d00fa0b19b30bf7b7de3.png)  
+   <img src="media/Part 1 - Setup VSCode/69b04ab5ead6d00fa0b19b30bf7b7de3.png" style="zoom:50%;" />  
    *Note: The ESLint extension will pick up the eslint configuration files you
    have – it will not run on projects that are not configured to work with
    eslint.*
-
-3. Open Settings in VSCode, and type ‘code action on save’
-
-4. Select ‘Edit in settings.json’ under ‘Editor: Code Actions On Save’ 
+4. Open Settings in VSCode, and type ‘code action on save’
+5. Under the **Workspace Tab**, select **Edit in settings.json** under **Editor: Code Actions On Save’**
    <img src="media/Part 1 - Setup VSCode/fb2dab9465e077f5beaefdf4b3979e00.png" style="zoom:50%;" />
-
-5. In the `settings.json`, ensure it is set to:
+6. In the `settings.json`, ensure it is set to:
 
 ```json
 {
