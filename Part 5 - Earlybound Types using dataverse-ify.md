@@ -1,6 +1,6 @@
 # Part 5 - Early bound types using Dataverse-ify
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 In this fifth part we will cover creating a early bound types so that you can call the reference attribute names in form scripts and call the `WebApi` with ease. 
 
@@ -56,15 +56,18 @@ npx dataverse-gen init
 
 You will be asked to select from the environments you have authenticated against (if you have more than one).
 
-Select the Entities that you wish to generate types for. In this example we will select account, `opportunity`, `email` & `activityparty`<img src="media/Part 5 - Earlybound Types and the WebApi/a577fec6dc0cef026a376e47808783fb.png" style="zoom:50%;" />
+Select the Entities that you wish to generate types for. In this example we will select `account`, `opportunity`, `email` & `activityparty`
+<img src="media/Part 5 - Earlybound Types and the WebApi/a577fec6dc0cef026a376e47808783fb.png" style="zoom:50%;" />
 
 Next you will be prompted to select the actions you wish to generate types for, we will select `WinOpportunity`. You can also select from any custom actions or custom APIs you have created.
 <img src="media/Part 5 - Earlybound Types and the WebApi/02a54b090272a722073f769cc3e96466.png" style="zoom:50%;" />
 
 Lastly you are asked to select any functions – we will not select any just yet.
 
-You are then prompted if you want to generate the types. Select Yes 
-<img src="media/d00ae9a1bdcd9741a805cb7f4cdb3cc1.png" style="zoom:50%;" />
+You are then prompted if you want to generate the types:
+**Select Yes** 
+
+![d00ae9a1bdcd9741a805cb7f4cdb3cc1](media/Part 5 - Earlybound Types using dataverse-ify/d00ae9a1bdcd9741a805cb7f4cdb3cc1.png)
 
 In the root of your project you should now see a file called `.dataverse-gen.json` that looks like this:
 
@@ -87,7 +90,9 @@ In the root of your project you should now see a file called `.dataverse-gen.jso
 ```
 
 There will also be a new folder called dataverse-gen under your src folder. This will contain the early-bound types and attribute constants.
-<img src="media/df10f5ab8582f9ffcb51b388e7fdda7e.png" style="zoom:50%;" />
+
+
+<img src="media/Part 5 - Earlybound Types using dataverse-ify/df10f5ab8582f9ffcb51b388e7fdda7e.png" style="zoom:50%;" />
 
 We can now update our `AccountForm.ts` with the attribute name constants `AccountAttributes.WebSiteURL`
 
@@ -118,6 +123,27 @@ npx dataverse-gen init
 ```
 
 or you can simply edit the `.dataverse-gen.json` file and run `npx dataverse-gen`
+
+## Using custom templates!
+
+If you wanted to just generate Attribute `enum` constants and stop there, you can easily customise the scripts to suit your needs by using:
+
+```shell
+npx dataverse-gen eject
+```
+
+This will create a step of templates ready to customise in the `_templates` folder. Once you have made your updates, just run `npx dataverse-gen` again. The templates use the awesome [ejs](https://ejs.co/) project. E.g.
+
+```typescript
+// Attribute constants
+export const enum <%- locals.SchemaName %>Attributes {
+<%locals.Properties && locals.Properties.forEach(function(property){ _%>
+ <%- property.SchemaName %> = "<%- property.Name %>",
+<%})_%>
+}
+```
+
+If you wanted to revert back to the standard templates, just delete the  `_templates` folder
 
 ## Next Up
 

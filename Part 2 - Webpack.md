@@ -1,6 +1,6 @@
 # Part 2 – Setting up Webpack to create a JavaScript Web resource bundle
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 In this second part, we will cover how to create your Web Resource JavaScript from your TypeScript project.
 
@@ -197,6 +197,7 @@ To ensure that tree shaking can be used on your code, the `tsconfig.json` must i
 ```
 
 If you use `commonjs` (the default), then any import/exports will be converted to code that webpack will not be use to tree shake.
+**IMPORTANT:** You will only see tree shaking happen when you do a production build of your code - the development build will not remove un-used exports.
 
 > **Note:** Tree shaking will only have a significant effect on your bundle size if you are using very large libraries that have many components that you are not using, or if your TypeScript code contains large amounts of redundant exports that are not used.
 

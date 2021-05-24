@@ -1,8 +1,8 @@
-# Part 7 - Calling JavaScript webresources from the Command Bar
+# Part 8 - Calling JavaScript webresources from the Command Bar
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
-In this seventh part we will cover how to create a button on the Ribbon to call the JavaScript webresource that we have created. In a later part of this series we will convert this to call a Custom API.
+In this eighth part we will cover how to create a button on the Ribbon to call the JavaScript webresource that we have created. In a later part of this series we will convert this to call a Custom API.
 
 
 ## Add Command Bar Button using the Ribbon Workbench

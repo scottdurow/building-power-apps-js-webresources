@@ -8,8 +8,11 @@ export class AccountForm {
     const formContext = context.getFormContext();
     const websiteAttribute = formContext.getAttribute(AccountAttributes.WebSiteURL);
     const websiteRegex = /^(https?:\/\/)?([\w\d]+\.)?[\w\d]+\.\w+\/?.+$/g;
-    const match = websiteAttribute.getValue().match(websiteRegex);
-    const isValid = match != null;
+    let isValid = true;
+    if (websiteAttribute && websiteAttribute.getValue()) {
+      const match = websiteAttribute.getValue().match(websiteRegex);
+      isValid = match != null;
+    }
 
     websiteAttribute.controls.forEach((c) => {
       if (isValid) {

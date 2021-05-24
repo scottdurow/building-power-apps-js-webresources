@@ -6,6 +6,17 @@ describe("AccountForm.onload", () => {
     XrmMockGenerator.initialise();
   });
 
+  it("Handles null values", () => {
+    // Arrange
+    const context = XrmMockGenerator.getEventContext();
+    const websiteMock = XrmMockGenerator.Attribute.createString("websiteurl", undefined);
+    websiteMock.controls.itemCollection[0].setNotification = jest.fn();
+    websiteMock.controls.itemCollection[0].clearNotification = jest.fn();
+    // Act
+    AccountForm.onload(context);
+    websiteMock.fireOnChange();
+  });
+
   it("notifies invalid website addresses", () => {
     const context = XrmMockGenerator.getEventContext();
     const websiteMock = XrmMockGenerator.Attribute.createString("websiteurl", "foobar");

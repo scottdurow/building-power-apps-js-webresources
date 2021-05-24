@@ -1,6 +1,6 @@
 # Part 6 - Calling the WebApi using dataverse-ify
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 In this sixth part we will cover calling the `WebApi` with easy using `dataverse-ify`. You can find full details about how the `WepApi` works at https://docs.microsoft.com/en-us/powerapps/developer/model-driven-apps/clientapi/reference/xrm-webapi. 
 
@@ -394,5 +394,5 @@ jest interation
 
 ## Next Up
 
-Now that we've created some fairly complex JavaScript logic and tested it (unit and integration) we are ready to deploy and test inside our Model Driven App.
+Now that we've created unit tests we can try our code against dataverse using an integration tests - right from inside VSCode!
 

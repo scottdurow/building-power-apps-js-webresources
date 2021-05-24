@@ -1,6 +1,6 @@
 # Part 4 – Deploying Webresources using spkl and debugging inside the browser
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 Now that you have created and tested your webresource locally, you are ready to deploy it to your Dataverse environment and hook it up to the Model Driven App.
 
@@ -76,12 +76,21 @@ deploy-webresources.bat
 
 > **Note:** It is important that you run the batch files when in the folder that contains the `spkl.json` or a child directory of that location. `spkl` will search for the nearest `spkl.json` to use.
 
-
 <img src="media/Part 4 - Deploying and browser debugging/209f8c510960f8376781f1dc98624a25-1621041294187.png" style="zoom:50%;" />
 
 The webresource is deployed or an existing one updated. It is added to the solution if not already there and then the changes are published.
 
 You can then hook up your webresource to the necessary form events. In this example we register it on the Account form for the Onload event:
+
+**Event Type**: On Load
+
+**Library**: `dev1_/js/clientooks.js`
+
+**Function**: `cds.ClientHooks.AccountForm.onload`
+
+**Pass execution context:** Checked
+
+
 <img src="media/Part 4 - Deploying and browser debugging/d609aacde1ede48cda732dd35e8ba0b8.png" style="zoom:50%;" />
 
 ## Debugging in the browser
@@ -109,13 +118,13 @@ After installation, you must enable HTTPS decryption so that we can intercept th
   - Enter the full path of your `dist/ClientHooks.js`
 
 
-    <img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" style="zoom:50%;" />
+    <img src="media/Part 4 - Deploying and browser debugging/ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541.png" alt="ab3a009fb2a013645d6c913ac8b2ca96-1621041308204-1621041350541" style="zoom:50%;" />
 
   **Note:** This can also be a regex if you had multiple webresources at the same location:
 
   ```text
   StringToMatch: REGEX:(?insx).+\/dev1_\/js\/(?'fname'[^?]*.js)`
-  File: `C:\MyProject\src\${fname}
+  File: `C:\MyProject\dist\${fname}
   ```
 
   Be sure to select **Enable rules** and **Unmatched requests passthrough**.

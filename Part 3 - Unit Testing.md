@@ -1,6 +1,6 @@
 # Part 3 – Developing and Testing locally inside VSCode
 
-This post is part of the series 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
+This is part of the course 'Scott's guide to building Power Apps JavaScript Web Resources using TypeScript'.
 
 In this third part we will cover developing your TypeScript web resource and testing first before deploying to your Dataverse environment.
 
@@ -18,9 +18,9 @@ npm install jest ts-jest xrm-mock @types/jest --save-dev
 - `ts-jest` – a jest pre-set that allows using `jest` with TypeScript
 - `xrm-mock` – a library for mocking the form context in Model Driven Apps (<https://github.com/camelCaseDave/xrm-mock>)
 
-### Add `jest.config`
+### Add `jest.config.js`
 
-Add the `jest.config` to the root of your project:
+Add the `jest.config.js` to the root of your project:
 
 ```json
 module.exports = {
@@ -121,14 +121,18 @@ Currently the code does not perform any validation, so we add the following to t
 ```typescript
 export class AccountForm {
   static async onload(context: Xrm.Events.EventContext): Promise<void> {
-    context.getFormContext().getAttribute(AccountAttributes.WebSiteURL).addOnChange(AccountForm.onWebsiteChanged);
+    context.getFormContext().getAttribute("websiteurl").addOnChange(AccountForm.onWebsiteChanged);
   }
   static onWebsiteChanged(context: Xrm.Events.EventContext): void {
     const formContext = context.getFormContext();
     const websiteAttribute = formContext.getAttribute("websiteurl");
     const websiteRegex = /^(https?:\/\/)?([\w\d]+\.)?[\w\d]+\.\w+\/?.+$/g;
-    const match = websiteAttribute.getValue().match(websiteRegex);
-    const isValid = match != null;
+
+    let isValid = true;
+    if (websiteAttribute && websiteAttribute.getValue()) {
+      const match = websiteAttribute.getValue().match(websiteRegex);
+      isValid = match != null;
+    }
 
     websiteAttribute.controls.forEach((c) => {
       if (isValid) {
@@ -150,7 +154,7 @@ See more info on `setNotification` here -https://docs.microsoft.com/en-us/powera
 If all of the above has been performed correctly, you now should be able to open your `unit.AccountForm.test.ts` file in VSCode and add a breakpoint, then press F5 to start debugging.
 
 VSCode should then allow you to debug your tests and step through each line using the standard debug controls.
-<img src="media/Part 3 - Unit Testing/image-20210514173920133-1621039161403-1621039458231.png" alt="image-20210514173920133" style="zoom:50%;" />
+<img src="media/Part 3 - Unit Testing/image-20210514173920133.png" alt="image-20210514173920133" style="zoom:50%;" />
 
 If you type `jest` at the command line you will also see that now your tests pass:
 <img src="media/Part 3 - Unit Testing/87d87b9bb8fc36d500891cd02ecc700f.png" style="zoom:50%;" />
