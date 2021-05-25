@@ -67,10 +67,15 @@ Now you have added your Custom API Definition, you will need to open your soluti
 
 We can now add the implementation of our Custom API using a c# plugin.
 
-1. Create a new Visual Studio Project in the same solution as the DataverseSolution project we created in Part 4.
+1. Create a new Visual Studio Project in the same solution as the `DataverseSolution` project we created in Part 4.
 2. Select 'Class Library (.Net Framework)'
-3. Name the project DataversePlugins and ensure the .Net Framework version is 4.6.2<img src="media/Part 9 - Calling Custom APIs from TypeScript/image-20210524114936748.png" alt="image-20210524114936748" style="zoom:50%;" />
+3. Name the project `DataversePlugins` and ensure the .Net Framework version is 4.6.2
+
+
+   <img src="media/Part 9 - Calling Custom APIs from TypeScript/image-20210524114936748.png" alt="image-20210524114936748" style="zoom:50%;" />
 4. You should end up with a solution that looks like the following:
+   
+   
    <img src="media/Part 9 - Calling Custom APIs from TypeScript/image-20210524115041856.png" alt="image-20210524115041856"  />
 5. Right click on the project and select Manage NuGet Packages
 6. Select the Browse tab and search for spkl as we did in Part 4. Install `spkl` to the Plugin Project
@@ -163,8 +168,7 @@ First we need to create an application user to authenticate against Dataverse. I
 
 Open PowerShell ISE as an Administrator
 
-![image-20210524141338633](media/Part 9 - Calling Custom APIs from TypeScript/image-20210524141338633.png)
-
+<img src="media/Part 9 - Calling Custom APIs from TypeScript/image-20210524141338633.png" alt="image-20210524141338633" style="zoom:50%;" />
 
 
 
@@ -177,7 +181,7 @@ Create a using the instructions here  [Service Principle](https://docs.microsoft
 
 ![image-20210524142141829](media/Part 9 - Calling Custom APIs from TypeScript/image-20210524142141829.png)
 
-5. Download the Script from 
+5. Download the [AddApplicationUserToEnv.ps1](https://github.com/scottdurow/building-power-apps-js-webresources/blob/main/code/AddApplicationUserToEnv.ps1)
 6. Open the Script in your PowerShell ISE, and replace the `ApplicationId` with the value from step 4
    <img src="media/Part 9 - Calling Custom APIs from TypeScript/image-20210524143025405.png" alt="image-20210524143025405" style="zoom:50%;" />
 7. Press the green **Run Script** or press `F9`
@@ -213,8 +217,7 @@ Install the following packages to the Test Project:
 
 - `spkl.fakes` 
 - `System.Configuration.ConfigurationManager` 
-- `Microsoft.Xrm.Tooling.Connector`
-- `Microsoft.Sdk.Crm.CoreAssembles`
+- `Microsoft.Xrm.Tooling.CoreAssembly`
 
 Also, add a reference to your Plugin Project:
 
@@ -223,7 +226,7 @@ Also, add a reference to your Plugin Project:
 
 Add the following code to the test class:
 
-```
+```typescript
 using Microsoft.Crm.Sdk.Fakes;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Xrm.Sdk;
@@ -328,7 +331,7 @@ If you run the tests, they will fail since we have not implemented the logic yet
 
 Inside the `DataversePlugins` project, add the following code to the Plugin we created above:
 
-```
+```typescript
 using Microsoft.Crm.Sdk.Messages;
 using Microsoft.Xrm.Sdk;
 using Microsoft.Xrm.Sdk.Query;
@@ -419,7 +422,7 @@ When you are prompted to select actions, you should now be able to select our cu
 
 This will generate a new set of types and metadata for the custom API. Update the TypeScript `AccountRibbon.closeOpportunitiesInternal` function with the following:
 
-```
+```typescript
 static async closeOpportunitiesInternal2(serviceClient: CdsServiceClient, accountid: string): Promise<void> {
   setMetadataCache(metadataCache);
   const closeOpportunityRequest = {

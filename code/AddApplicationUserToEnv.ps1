@@ -2,7 +2,7 @@
 Install-Module -Name Microsoft.Xrm.OnlineManagementAPI -MaximumVersion 1.2.0.1 -Scope CurrentUser
 Install-Module -Name Microsoft.Xrm.Data.Powershell -Scope CurrentUser  -AllowClobber
 
-$appId = [Guid]"a2e251bc-322f-485a-a58c-e9f52d5c218d"
+$appId = [Guid]"61bebcd1-d430-4a77-a77e-ed58df823453"
 
 
 # Create the Application User
