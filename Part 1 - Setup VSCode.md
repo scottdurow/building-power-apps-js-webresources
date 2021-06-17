@@ -133,6 +133,31 @@ npm install --save-dev --save-exact prettier
 
 This will install the eslint and prettier node modules.
 
+Now you have eslint configured, you can add linting to your `package.json` file to enable you to list and fix any code issues. Add the following scripts:
+
+```json
+"scripts": {
+    
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "npm run lint -- --fix"
+    
+  }
+```
+
+At the command line you should now be able to run:
+
+```shell
+npm run lint
+```
+
+and to fix any issues that are reported that can be fix automatically use:
+
+```shell
+npm run lint:fix
+```
+
+See https://eslint.org/docs/user-guide/command-line-interface for more information.
+
 ### Install the `ESLint` VSCode Extension
 
 We will uses the ESLint VSCode extension. This will give you a code lens that
