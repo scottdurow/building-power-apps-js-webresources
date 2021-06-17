@@ -102,17 +102,41 @@ If you now run jest, you will see that these two test fail since we have not imp
 At the command prompt of your VSCode project, type:
 
 ```shell
+npx jest
+```
+
+Or you can install `jest` globally using:
+
+```shell
+npm install jest -g
+```
+
+This would allow you to then simply use the following at the command line:
+
+```shell
 jest
 ```
 
-
 <img src="media/Part 3 - Unit Testing/8ef4aa8ab2fda103b8834df49da58365-1621039166048-1621039464464.png" style="zoom:50%;" />
 
-You could also use the following since we added the test script to `package.json`:
+These tests obviously will fail at the moment because we have not added any code!
+
+To define which unit tests we should run for the project, we can add the following script to the `package.json`:
+
+```json
+"scripts": {
+   
+    "test": "jest",
+    
+```
+
+This allows us to then simply run the following to run the tests:
 
 ```shell
 npm test
 ```
+
+Later, we will define a different set of tests for integration and unit tests using different scripts to run the different suites of tests.
 
 ### Write the code
 
@@ -159,7 +183,7 @@ VSCode should then allow you to debug your tests and step through each line usin
 If you type `jest` at the command line you will also see that now your tests pass:
 <img src="media/Part 3 - Unit Testing/87d87b9bb8fc36d500891cd02ecc700f.png" style="zoom:50%;" />
 
-If you wanted to specifically test an individual test you can also use:
+If you wanted to specifically test an individual test you can also use the following (after jest is installed globally as described above):
 
 ```shell
 jest unit.AccountForm
